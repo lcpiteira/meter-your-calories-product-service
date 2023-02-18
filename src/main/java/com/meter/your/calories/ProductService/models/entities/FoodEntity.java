@@ -2,10 +2,14 @@ package com.meter.your.calories.ProductService.models.entities;
 
 import com.meter.your.calories.ProductService.models.enums.FoodGroupEnum;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 
 @Entity
 @Table(name = "food")
+@Getter
+@Setter
 public class FoodEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
