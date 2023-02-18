@@ -36,6 +36,12 @@ public class FoodServiceImpl implements FoodService {
     }
 
     @Override
+    public List<FoodEntity> createByFoodItemList(List<FoodDto> foodDtoList) {
+        List<FoodEntity> foodEntities = FoodMapper.mapFoodDtoToFoodEntity(foodDtoList);
+        return foodRepository.saveAll(foodEntities);
+    }
+
+    @Override
     public void deleteFoodItem(String foodName) {
         foodRepository.deleteFoodEntitiesByName(foodName);
     }

@@ -8,6 +8,7 @@ import java.util.List;
 public interface FoodService {
     List<FoodDto> getAllFoodItems();
     FoodEntity createFoodItem(FoodDto foodDto);
+    List<FoodEntity> createByFoodItemList(List<FoodDto> foodDtoList);
 
     void deleteFoodItem(String foodName);
 

@@ -50,6 +50,20 @@ public class FoodMapper {
                         .collect(Collectors.toList());
     }
 
+    public static List<FoodEntity> mapFoodDtoToFoodEntity(List<FoodDto> foodDtoList){
+        return
+                foodDtoList
+                        .stream()
+                        .map(foodDto -> {
+                            FoodEntity foodEntity = new FoodEntity();
+                            foodEntity.setFood_group(FoodGroupEnum.valueOf(foodDto.getFood_group().toUpperCase(Locale.ROOT)));
+                            foodEntity.setName(foodDto.getName());
+                            foodEntity.setCalories(foodDto.getCalories());
+                            return foodEntity;
+                        })
+                        .collect(Collectors.toList());
+    }
+
 
 
 

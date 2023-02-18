@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 public class FoodEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "FOOD_ID")
     private Long id;
     @Column(name = "NAME")
